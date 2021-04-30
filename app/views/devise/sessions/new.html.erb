@@ -2,6 +2,11 @@
   <div class="container">
     <h2>ユーザー情報入力</h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>
+      
       <div class="field">
         <%= f.label :email,"メールアドレス" %><br />
         <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
