@@ -1,0 +1,11 @@
+<div class="contents row">
+  <% @tweets.each do |tweet| %>
+    <div class="content_post">
+      <%= link_to image_tag(tweet.image, class: :card__img ), "#", method: :get %>
+      <p><%= tweet.store_name %></p>
+      <span class="name">
+        <%= link_to "by #{tweet.user.name}", "/users/#{tweet.user_id}", class: :tweet__user %>
+      </span>
+    </div>
+  <% end %>
+</div>
