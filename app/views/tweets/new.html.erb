@@ -2,38 +2,40 @@
   <div class="container">
     <h3>投稿する</h3>
     <%= form_with(model: @tweet, local: true) do |form| %>
-      <<div class="field">
-        <%= f.label :store_name, "お店の名前" %><br />
-        <%= f.text_field :store_name, id:"tweet_store_name" %>
+      <%= render 'shared/error_messages', model: form.object %>
+
+      <div class="field">
+        <%= form.label :store_name, "お店の名前" %><br />
+        <%= form.text_field :store_name, id:"tweet_store_name" %>
       </div>
 
       <div class="field">
-        <%= f.label :store_type, "お店の種類" %><br />
-        <%= f.text_field :store_type, id:"tweet_store_type" %>
+        <%= form.label :store_type, "お店の種類" %><br />
+        <%= form.text_field :store_type, id:"tweet_store_type" %>
       </div>
 
       <div class="field">
-        <%= f.label :information, "お店の紹介" %><br />
-        <%= f.text_area :information, class: :form__text, id:"tweet_information" %>
+        <%= form.label :information, "お店の紹介" %><br />
+        <%= form.text_area :information, class: :form__text, id:"tweet_information" %>
       </div>
 
       <div class="field">
-        <%= f.label :place_area_id, "お店の場所" %><br />
-        <%= f.collection_select(:place_area_id, PlaceArea.all, :id, :name, {}, {class:"select-box", id:"tweet_place_area"}) %>
+        <%= form.label :place_area_id, "お店の場所" %><br />
+        <%= form.collection_select(:place_area_id, PlaceArea.all, :id, :name, {}, {class:"select-box", id:"tweet_place_area"}) %>
       </div>
 
       <div class="field">
-        <%= f.label :phone, "お店の電話番号" %><br />
-        <%= f.text_field :phone, id:"tweet_phone" %>
+        <%= form.label :phone, "お店の電話番号(11桁以内)" %><br />
+        <%= form.text_field :phone, id:"tweet_phone", maxlength:"11"%>
       </div>
  
-      <div class="field">
-        <%= f.label :image, "想い出グラム" %><br />
-        <%= f.file_field :image, id:"tweet_image" %>
+      <div class="image_field">
+        <%= form.label :image, "想い出グラム" %><br />
+        <%= form.file_field :image, id:"tweet_image" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "保存する", class: :form__btn  %>
+        <%= form.submit "保存する", class: :form__btn  %>
       </div>
     <% end %>
   </div>
