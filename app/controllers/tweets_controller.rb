@@ -18,6 +18,10 @@ class TweetsController < ApplicationController
     end
   end
 
+  def show
+    
+  end
+
   private
   def tweet_params
     params.require(:tweet).permit(:store_name, :store_type, :information, :place_area_id, :phone, :image).merge(user_id: current_user.id)
