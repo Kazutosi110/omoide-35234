@@ -654,19 +654,19 @@ h6,
 body {
   line-height: 1.57;
   letter-spacing: 0.15em;
-  font-size: 16px;
-  color: #666;
+  font-size: 20px;
+  color: #FF9966;
   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: #666;
+  color: white;
 }
 
 a:hover {
-  color: #FF7F3F;
+  color: #e0e0e0;
 }
 
 .bold {
@@ -706,9 +706,8 @@ form input[type="submit"] {
 .btn,
 header.header div.header__bar.row div.grid-6 a.post {
   padding: 8px 20px;
-  font-size: 14px;
-  border: 2px solid #FF7F3F;
-  color: #FF7F3F;
+  font-size: 16px;
+  color: white;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
@@ -717,8 +716,8 @@ header.header div.header__bar.row div.grid-6 a.post {
 
 .btn:hover,
 header.header div.header__bar.row div.grid-6 a.post:hover {
-  border-color: #FFAA7F;
-  color: #FFAA7F;
+  border-color: white;
+  color: #e0e0e0;
 }
 
 .title {
@@ -738,7 +737,7 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
 header.header {
   padding: 10px;
   border-bottom: 1px solid #D8D8D8;
-  background-color: #fff;
+  background-color: #FF7F3F;
   position: fixed;
   top: 0;
   left: 0;
@@ -1017,8 +1016,8 @@ form input[type="submit"]:hover {
   margin: 0 0 20px;
   text-align: center;
   font-weight: normal;
-  font-size: 20px;
-  color: #666;
+  font-size: 25px;
+  color: #FF9966;
 }
 
 .comments {
@@ -1037,7 +1036,7 @@ form input[type="submit"]:hover {
 footer {
   margin: 30px auto;
   padding: 10px;
-  color: #D8D8D8;
+  color: #FF7F3F;
 }
 
 footer p {
