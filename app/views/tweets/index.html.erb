@@ -1,25 +1,16 @@
-<div class="contents row">
-  <% @tweets.each do |tweet| %>
-    <div class="content_post">
-      <%= image_tag tweet.image, class: "tweet_img" %>
-      <div class="more">
-        <span><%= image_tag 'arrow_under.png' %></span>
-        <ul class="more_list">
-          <li>
-            <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
-          </li>
-          <li>
-            <%= link_to '編集', "#", method: :get %>
-          </li>
-          <li>
-            <%= link_to '削除', "#", method: :delete %>
-          </li>
-        </ul>
+<main class="main">
+  <div class="inner">
+    <%# ログインしているときは以下を表示する %>
+    <% if user_signed_in? %>
+      <div class="greeting">
+        こんにちは、
+        <%= link_to "#{current_user.name}さん", "/users/#{current_user.id}", class: :greeting__link%>
       </div>
-      <span class="name">
-        <%= link_to tweet.store_name, "#", class: :card_title, method: :get %>
-        <%= link_to "by #{tweet.user.name}", "/users/#{tweet.user_id}", class: :tweet__user %>
-      </span>
+    <% end %>
+    <%# // ログインしているときは上記を表示する %>
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%= render partial: 'tweet', collection: @tweets %>
     </div>
-  <% end %>
-</div>
+  </div>
+</main>

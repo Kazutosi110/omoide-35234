@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Omoide35234</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProtoSpace</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
     <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">想い出グラム</a></h1>
-        <% if user_signed_in? %>
-          <div class="user_nav grid-6">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <%= link_to "投稿する", new_tweet_path, class: "post" %>
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to "想い出グラム", root_path, class: :logo %>
           </div>
-        <% else %>
-          <div class="grid-6">
-            <%= link_to "ログイン", new_user_session_path, class: "post" %>
-            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-          </div>
-        <% end %>
+             <%# ログインしているときは以下を表示するようにしましょう %>
+          <% if user_signed_in? %>
+            <div class="nav__right">
+              <%= link_to "ログアウト", destroy_user_session_path, class: :nav__logout, method: :delete %>
+              <%= link_to "New Proto", new_tweet_path, class: :nav__btn %>
+            </div>
+          <% else %>
+              <%# // ログインしているときは上記を表示するようにしましょう %>
+              <%# ログインしていないときは以下を表示するようにしましょう %>
+            <div class="nav__right">
+              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+            </div>
+          <% end %>
+              <%# // ログインしていないときは上記を表示するようにしましょう %>
+        </div>
       </div>
     </header>
     <%= yield %>
-    <footer>
-      <p>
-        Copyright 想い出グラム 2021.
-      </p>
+    <footer class="footer">
+      <p class="copyright">Copyright 想い出グラム 2021.</p>
     </footer>
   </body>
 </html>
