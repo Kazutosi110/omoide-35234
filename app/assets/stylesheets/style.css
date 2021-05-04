@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #FF7F3F;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -52,16 +52,18 @@ a {
   justify-content: space-between;
 }
 .logo {
+  font-size: 1.0em;
   width: 200px;
+  color: white;
+  font-weight: bold;
 }
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: white;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -74,12 +76,14 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: white;
   text-decoration: none;
   user-select: none;
+  border-radius: 3px;
 }
 .nav__logout:hover{
-  opacity: 0.5;
+  color: #fff;
+  background: #87CEFA;
 }
 
 /* フォーム周り */
@@ -269,7 +273,7 @@ a {
 /* フッター */
 
 .footer {
-  background-color: #999;
+  background-color: #FF7F3F;
   padding: 10px 0;
 }
 .copyright {

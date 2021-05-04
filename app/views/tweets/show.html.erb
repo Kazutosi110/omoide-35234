@@ -18,15 +18,21 @@
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__title">お店の種類</p>
           <p class="detail__message">
             <%= @tweet.store_type %>
           </p>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
+          <p class="detail__title">R指定</p>
           <p class="detail__message">
-            <%= @tweet.user.name %>
+            <%= @tweet.user.age %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">お店の紹介</p>
+          <p class="detail__message">
+            <%= @tweet.information %>
           </p>
         </div>
       </div>
