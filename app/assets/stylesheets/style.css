@@ -52,10 +52,12 @@ a {
   justify-content: space-between;
 }
 .logo {
-  font-size: 1.0em;
   width: 200px;
   color: white;
   font-weight: bold;
+}
+.logo:hover{
+  opacity: 0.7;
 }
 .nav__btn{
   display: inline-block;
