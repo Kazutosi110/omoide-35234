@@ -1,32 +1,29 @@
-<div class="contents row">
-  <div class="container">
-    <h2>ユーザー情報入力</h2>
-    <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-      <div class='login-flash-message'>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">ユーザーログイン</h2>
+        <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
+        <%# 「ログイン機能へのパス」は、devise導入後にrails routesを実行してdevise/sessions#createへのパスを確認し、記載してください。 %>
+        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <div class='login-flash-message'>
         <%= flash[:notice] %>
         <%= flash[:alert] %>
-      </div>
-
-      <div class="field">
-        <%= f.label :email,"メールアドレス" %><br />
-        <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :password, "パスワード（6文字以上）" %><br />
-        <%= f.password_field :password, id:"user_password", autocomplete: "off", autocomplete: "current-password" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.label :remember_me %><br />
-          <%= f.check_box :remember_me %>
         </div>
-      <% end -%>
 
-      <div class="actions">
-        <%= f.submit "ログイン" %>
-      </div>
-    <% end %>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "current-password" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "ログイン", class: :form__btn %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

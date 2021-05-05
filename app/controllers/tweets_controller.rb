@@ -22,6 +22,22 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
 
+  def edit
+    @tweet = Tweet.find(params[:id])
+    unless current_user.id == @tweet.user_id
+      redirect_to action: :index
+    end
+  end
+
+  def update
+    @tweet = Tweet.find(params[:id])
+    if @tweet.update(tweet_params)
+      redirect_to tweet_path(@tweet.id)
+    else
+      render :edit
+    end
+  end
+
   private
   def tweet_params
     params.require(:tweet).permit(:store_name, :store_type, :information, :place_area_id, :phone, :image).merge(user_id: current_user.id)
