@@ -17,26 +17,28 @@
       <div class="prototype__image">
         <%= image_tag @tweet.image %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__title">お店の種類</p>
-          <p class="detail__message">
-            <%= @tweet.store_type %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">年齢</p>
-          <p class="detail__message">
-            <%= "#{@tweet.user.age}歳" %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">お店の紹介</p>
-          <p class="detail__message">
-            <%= @tweet.information %>
-          </p>
-        </div>
-      </div>
+      <table class="prototype__body">
+        <tbody>
+          <tr class="prototype__detail">
+            <th class="detail__title">お店の種類</th>
+            <td class="detail__message">
+              <%= @tweet.store_type %>
+            </td>
+          </tr>
+          <tr class="prototype__detail">
+            <th class="detail__title">年齢</th>
+            <td class="detail__message">
+              <%= "#{@tweet.user.age}歳" %>
+            </td>
+          </tr>
+          <tr class="prototype__detail">
+            <th class="detail__title">お店の紹介</th>
+            <td class="detail__message">
+              <%= @tweet.information %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? %>
