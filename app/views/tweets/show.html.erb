@@ -26,9 +26,15 @@
             </td>
           </tr>
           <tr class="prototype__detail">
-            <th class="detail__title">年齢</th>
+            <th class="detail__title">投稿者の年齢</th>
             <td class="detail__message">
               <%= "#{@tweet.user.age}歳" %>
+            </td>
+          </tr>
+          <tr class="prototype__detail">
+            <th class="detail__title">お店の電話番号(ハイフンなし)</th>
+            <td class="detail__message">
+              <%= @tweet.phone %>
             </td>
           </tr>
           <tr class="prototype__detail">
