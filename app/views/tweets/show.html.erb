@@ -5,7 +5,7 @@
         <%= @tweet.store_name %>
         <%= "(#{@tweet.place_area.name})" %>
       </p>
-      <%= link_to "by #{@tweet.user.name}", "#", class: :prototype__user %>
+      <%= link_to "by #{@tweet.user.name}", "/users/#{@tweet.user_id}", class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && current_user.id == @tweet.user_id %>
         <div class="prototype__manage">
@@ -58,7 +58,7 @@
           <h4>＜コメント一覧＞</h4>
           <% @comments.each do |comment| %>
             <li class="comments_list">
-              <%= link_to comment.user.name, "#", class: :comment_user %>
+              <%= link_to comment.user.name, "/users/#{comment.user_id}", class: :comment_user %>
               <strong><%= "(#{comment.user.age}歳)" %>：</strong>
               <%= comment.text %>
             </li>

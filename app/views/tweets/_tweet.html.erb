@@ -6,6 +6,6 @@
       <%= tweet.store_type %>
       <%= "(#{tweet.place_area.name})" %>
     </p>
-    <%= link_to "by #{tweet.user.name}", "#", class: :card__user %>
+    <%= link_to "by #{tweet.user.name}", "/users/#{tweet.user_id}", class: :card__user %>
   </div>
 </div>
