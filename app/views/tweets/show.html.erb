@@ -3,6 +3,7 @@
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
         <%= @tweet.store_name %>
+        <%= "(#{@tweet.place_area.name})" %>
       </p>
       <%= link_to "by #{@tweet.user.name}", "#", class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
@@ -24,7 +25,7 @@
           </p>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">R指定</p>
+          <p class="detail__title">年齢</p>
           <p class="detail__message">
             <%= "#{@tweet.user.age}歳" %>
           </p>
@@ -35,6 +36,35 @@
             <%= @tweet.information %>
           </p>
         </div>
+      </div>
+      <div class="prototype__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+        <% if user_signed_in? %>
+          <%= form_with model: [@tweet, @comment],local: true do |f|%>
+            <div class="field">
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text, id:"comment_text" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn  %>
+            </div>           
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>   
+        <% end %>
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <h4>＜コメント一覧＞</h4>
+          <% @comments.each do |comment| %>
+            <li class="comments_list">
+              <%= link_to comment.user.name, "#", class: :comment_user %>
+              <strong><%= "(#{comment.user.age}歳)" %>：</strong>
+              <%= comment.text %>
+            </li>
+          <% end %>
+          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+        </ul>
       </div>
     </div>
   </div>

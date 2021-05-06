@@ -12,4 +12,5 @@ class User < ApplicationRecord
   validates :age, presence: true
 
   has_many :tweets
+  has_many :comments
 end

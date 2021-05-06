@@ -224,6 +224,7 @@ a {
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
+  border-radius: 10px;
 }
 
 .comments_lists{
@@ -237,7 +238,7 @@ a {
 
 .comment_user{
   font-size: 16px;
-  color: #999;
+  color: #FF7F3F;
   text-decoration: underline;
 }
 
