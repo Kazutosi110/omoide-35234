@@ -1,0 +1,23 @@
+.search-form {
+  text-align: center;
+  padding: 0px 32px 32px 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+  color: white;
+  background-color: #FF7F3F;
+  text-decoration: none;
+  user-select: none;
+  border: 1px solid;
+  border-radius: 3px;
+}
+.search-btn:hover{
+  color: #fff;
+  background: #87CEFA;
+}
