@@ -14,4 +14,12 @@ class Tweet < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :place_area
+
+  def self.search(search)
+    if search != ""
+      Tweet.joins(:user).where(['name LIKE(?) OR age LIKE(?)', "%#{search}%", "%#{search}%"])
+    else
+      Tweet.includes(:user).order("created_at DESC")
+    end
+  end
 end

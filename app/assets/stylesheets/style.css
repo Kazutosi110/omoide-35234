@@ -55,6 +55,7 @@ a {
   width: 200px;
   color: white;
   font-weight: bold;
+  font-size: larger;
 }
 .logo:hover{
   opacity: 0.7;
@@ -320,6 +321,7 @@ a {
 @media (max-width: 599px) {
   .logo {
     width: 120px;
+    font-size: 13px;
   }
   .page-heading {
     font-size: 20px;
@@ -340,4 +342,13 @@ a {
   .table{
     width: 100%;
   }
+  
+  .search-form .search-input {
+    width: 50%;
+    margin-right: 10px;
+  }
+  
+  .search-form .search-btn {
+    width: 20%;
+  }  
 }
