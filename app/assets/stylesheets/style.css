@@ -55,6 +55,7 @@ a {
   width: 200px;
   color: white;
   font-weight: bold;
+  font-size: larger;
 }
 .logo:hover{
   opacity: 0.7;

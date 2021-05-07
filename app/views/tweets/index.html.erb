@@ -1,7 +1,12 @@
+<div class='item-contents'>
+  <h2 class='title'>・ピックアップカテゴリー</h2>
+  <%= link_to '新規投稿一覧(投稿には要ログイン)', new_tweet_path, class: "subtitle" %>
+</div>
 <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "ユーザー名・年齢で検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
+
 <main class="main">
   <div class="inner">
     <%# ログインしているときは以下を表示する %>
@@ -13,10 +18,6 @@
       </div>
     <% end %>
     <%# // ログインしているときは上記を表示する %>
-    <div class='item-contents'>
-      <h2 class='title'>ピックアップカテゴリー</h2>
-      <%= link_to '新規投稿一覧(投稿には要ログイン)', new_tweet_path, class: "subtitle" %>
-    </div>
     <div class="card__wrapper">
       <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       <%= render partial: 'tweet', collection: @tweets %>
