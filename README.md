@@ -26,6 +26,7 @@
 | information | text | null: false |
 | place_area_id | integer | null: false |
 | phone | string | null: false |
+| price | integer | null: false |
 | user |references| null: false, foreign_key: true|
 
 ### Association
@@ -49,7 +50,7 @@
 - belongs_to :user
 
 
-## reservations テーブル
+## purchases テーブル
 
 | Column                  | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -74,4 +75,4 @@
 
 - belongs_to :user
 - belongs_to :tweet
-- has_one :reservation
+- has_one :purchase
