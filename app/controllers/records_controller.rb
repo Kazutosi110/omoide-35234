@@ -9,6 +9,7 @@ class RecordsController < ApplicationController
   def create
     @record_purchase = RecordPurchase.new(record_params)
     if @record_purchase.valid?
+      pay_item
       @record_purchase.save
       redirect_to root_path
     else
@@ -20,7 +21,16 @@ class RecordsController < ApplicationController
 
   def record_params
     params.require(:record_purchase).permit(:hate_list, :people_id).merge(
-      user_id: current_user.id, tweet_id: @tweet.id
+      user_id: current_user.id, tweet_id: @tweet.id, token: params[:token]
+    )
+  end
+
+  def pay_item
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp::Charge.create(
+      amount: @tweet.price,
+      card: record_params[:token],
+      currency: 'jpy'
     )
   end
 

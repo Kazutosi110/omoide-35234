@@ -1,10 +1,11 @@
 class RecordPurchase
   include ActiveModel::Model
-  attr_accessor :user_id, :tweet_id, :hate_list, :people_id
+  attr_accessor :user_id, :tweet_id, :hate_list, :people_id, :token
 
   with_options presence: true do
     validates :user_id
     validates :tweet_id
+    validates :token
     validates :people_id, numericality: { other_than: 1, message: "can't be blank" }
   end
 

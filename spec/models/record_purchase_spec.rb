@@ -28,6 +28,12 @@ RSpec.describe RecordPurchase, type: :model do
         expect(@record_purchase.errors.full_messages).to include("People can't be blank")
       end
 
+      it "tokenが空では登録できないこと" do
+        @record_purchase.token = nil
+        @record_purchase.valid?
+        expect(@record_purchase.errors.full_messages).to include("Token can't be blank")
+      end
+
       it 'userが紐付いていないと購入できない' do
         @record_purchase.user_id = nil
         @record_purchase.valid?
