@@ -7,11 +7,15 @@
       </p>
       <%= link_to "by #{@tweet.user.name}", "/users/#{@tweet.user_id}", class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user.id == @tweet.user_id %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
-          <%= link_to "削除する", tweet_path(@tweet.id), class: :prototype__btn, method: :delete %>
-        </div>
+      <% if user_signed_in? %>
+        <% if current_user.id == @tweet.user_id %>
+          <div class="prototype__manage">
+            <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
+            <%= link_to "削除する", tweet_path(@tweet.id), class: :prototype__btn, method: :delete %>
+          </div>
+        <% else %>
+          <%= link_to "購入画面に進む", tweet_records_path(@tweet.id),class:"item-red-btn" %>
+        <% end %>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
