@@ -62,7 +62,7 @@
       </table>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && @tweet.record.blank? %>
           <%= form_with model: [@tweet, @comment],local: true do |f|%>
             <div class="field">
               <%= f.label :text, "コメント" %><br />
@@ -73,7 +73,7 @@
             </div>           
           <% end %>
         <% else %>
-          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>   
+          <strong><p>※※※ コメントの投稿は新規登録/ログイン及び予約前の投稿に限ります ※※※</p></strong>   
         <% end %>
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
