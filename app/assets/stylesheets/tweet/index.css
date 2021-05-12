@@ -21,3 +21,11 @@
   color: #FF7F3F;
   font-weight: bold;
 }
+
+.sold-out {
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: crimson;
+  color: #FFF;
+}

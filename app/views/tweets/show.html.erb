@@ -7,7 +7,7 @@
       </p>
       <%= link_to "by #{@tweet.user.name}", "/users/#{@tweet.user_id}", class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && @tweet.record.blank? %>
         <% if current_user.id == @tweet.user_id %>
           <div class="prototype__manage">
             <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
@@ -21,6 +21,11 @@
       <div class="prototype__image">
         <%= image_tag @tweet.image %>
       </div>
+      <% if @tweet.record.present? %> 
+        <div class="sold-out">
+          <span>予約済み!!</span>
+        </div>
+      <% end %>
       <table class="prototype__body">
         <tbody>
           <tr class="prototype__detail">

@@ -1,5 +1,10 @@
 <div class="card">
   <%= link_to image_tag(tweet.image, class: :card__img ), tweet_path(tweet.id), method: :get %>
+  <% if tweet.record.present? %> 
+    <div class='sold-out'>
+      <span>予約済み!!</span>
+    </div>
+  <% end %>
   <div class="card__body">
     <%= link_to tweet.store_name, tweet_path(tweet.id), class: :card__title, method: :get %>
     <%= "#{tweet.price}円" %>
