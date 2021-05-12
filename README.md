@@ -54,7 +54,8 @@
 
 | Column                  | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
-| preferred_day | date | null: false |
+| starting_time | datetime | null: false |
+| ending_time | datetime | null: false |
 | hate_list | text | |
 | people_id | integer | null: false |
 | record | references | null: false, foreign_key: true |
