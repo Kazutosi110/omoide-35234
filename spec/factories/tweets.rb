@@ -5,6 +5,7 @@ FactoryBot.define do
     information           { Faker::Lorem.sentence }
     place_area_id         { 5 }
     phone                 { "09012345678" }
+    price                 { 8_888 }
     association :user
 
     after(:build) do |tweet|
