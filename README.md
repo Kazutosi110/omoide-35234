@@ -27,6 +27,7 @@
 | place_area_id | integer | null: false |
 | phone | string | null: false |
 | price | integer | null: false |
+| birthday | date | null: false |
 | user |references| null: false, foreign_key: true|
 
 ### Association
