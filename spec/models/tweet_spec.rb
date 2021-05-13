@@ -124,6 +124,12 @@ RSpec.describe Tweet, type: :model do
         expect(@tweet.errors.full_messages).to include('Price is not included in the list')
       end
 
+      it 'birthdayが空では登録できない' do
+        @tweet.birthday = ''
+        @tweet.valid?
+        expect(@tweet.errors.full_messages).to include("Birthday can't be blank")
+      end
+
       it 'userが紐付いていないと投稿できない' do
         @tweet.user = nil
         @tweet.valid?
