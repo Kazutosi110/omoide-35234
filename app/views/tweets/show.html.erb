@@ -6,7 +6,6 @@
         <%= "(#{@tweet.place_area.name})" %>
       </p>
       <%= link_to "by #{@tweet.user.name}", "/users/#{@tweet.user_id}", class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
       <% if user_signed_in? && @tweet.record.blank? %>
         <% if current_user.id == @tweet.user_id %>
           <div class="prototype__manage">
@@ -17,7 +16,6 @@
           <%= link_to "購入画面に進む", tweet_records_path(@tweet.id),class:"item-red-btn" %>
         <% end %>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
         <%= image_tag @tweet.image %>
       </div>
@@ -67,7 +65,6 @@
         </tbody>
       </table>
       <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? && @tweet.record.blank? %>
           <%= form_with model: [@tweet, @comment],local: true do |f|%>
             <div class="field">
@@ -81,9 +78,7 @@
         <% else %>
           <strong><p>※※※ コメントの投稿は新規登録/ログイン及び予約前の投稿に限ります ※※※</p></strong>   
         <% end %>
-        <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <h4>＜コメント一覧＞</h4>
           <% @comments.each do |comment| %>
             <li class="comments_list">
@@ -92,7 +87,6 @@
               <%= comment.text %>
             </li>
           <% end %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>
     </div>

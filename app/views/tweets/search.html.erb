@@ -4,7 +4,6 @@
 <% end %>
 <main class="main">
   <div class="inner">
-    <%# ログインしているときは以下を表示する %>
     <% if user_signed_in? %>
       <div class="greeting">
         どうもこんにちは、
@@ -12,13 +11,11 @@
         さん！
       </div>
     <% end %>
-    <%# // ログインしているときは上記を表示する %>
     <div class='item-contents'>
       <h2 class='title'>検索結果一覧</h2>
       <%= link_to '新規投稿はこちら(要ログイン)', new_tweet_path, class: "subtitle" %>
     </div>
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
       <%= render partial: 'tweet', collection: @tweets %>
     </div>
   </div>
