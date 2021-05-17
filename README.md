@@ -75,11 +75,11 @@ https://omoide-35234.herokuapp.com/
 
 # 目指した課題解決
 
+・スキルシェアによりコロナ禍での新しい稼ぎ方の提案
+
 ・人検索による新しい検索機能の定義
 
-・年齢検索によって同世代のお店を検索することが可能
-
-・コロナ禍で知り合いにお金を落とすことが可能
+・年齢検索によって同世代の人物を検索することが可能
 
 # 洗い出した要件
 
@@ -107,11 +107,13 @@ https://docs.google.com/spreadsheets/d/1NJipzb2WuwvwneOsikmtVhAgkfEpgNwJXfxGdbDT
 
 # 実装予定の機能
 
-・Googleマップによる外部APIの導入
+・チャットルーム機能
 
 ・ユーザー編集機能
 
 ・いいね機能
+
+・募金機能
 
 # データベース設計
 
@@ -195,5 +197,3 @@ https://docs.google.com/spreadsheets/d/1NJipzb2WuwvwneOsikmtVhAgkfEpgNwJXfxGdbDT
 ## ER図
 
 [![Image from Gyazo](https://i.gyazo.com/3b425d7e4d0c3dbaae3423a1c412e438.png)](https://gyazo.com/3b425d7e4d0c3dbaae3423a1c412e438)
-
-# ローカルでの動作方法
